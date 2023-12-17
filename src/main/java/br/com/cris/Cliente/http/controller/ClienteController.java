@@ -54,7 +54,7 @@ public class ClienteController {
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void removerCliente(Long id){
+	public void removerCliente(@PathVariable Long id){
 		clienteservice.buscarPorId(id)
 		.map(cliente -> {
 			clienteservice.removerPorId(cliente.getId());
